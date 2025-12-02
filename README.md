@@ -1,4 +1,4 @@
-# Desafio Vaga Estágio Dev Python :: 2026.1
+# Desafio Vaga Estágio Dev Python 2026.1
 
 **Autor:** Getulio Dantas
 
@@ -61,21 +61,13 @@ O frontend foi feito com Django Templates e possui:
 
 ## Estrutura do Projeto
 
-```
-academia_dev_python/
-├── academia/           # App principal
-│   ├── models.py      # Modelos (Aluno, Curso, Matricula)
-│   ├── views.py       # Views da API e frontend
-│   ├── serializers.py # Serializers do DRF
-│   ├── admin.py       # Configuração do Django Admin
-│   └── urls_*.py      # URLs da API e web
-├── core/              # Configurações do Django
-├── templates/         # Templates HTML
-├── docker-compose.yml # Configuração Docker
-├── Dockerfile         # Imagem Docker
-├── requirements.txt   # Dependências Python
-└── meu_database.sql   # Script SQL do banco
-```
+1. **academia/**: App principal com modelos, views, serializers e URLs.
+2. **core/**: Configurações globais do projeto Django.
+3. **templates/**: Arquivos HTML do frontend.
+4. **docker-compose.yml**: Configuração do ambiente Docker.
+5. **Dockerfile**: Instruções para construir a imagem da aplicação.
+6. **meu_database.sql**: Script SQL de criação do banco de dados.
+7. **requirements.txt**: Lista de dependências Python.
 
 ## Tecnologias Utilizadas
 
