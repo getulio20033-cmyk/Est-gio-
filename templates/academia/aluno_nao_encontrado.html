@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}Aluno Não Encontrado{% endblock %}
+
+{% block content %}
+    <h2>Erro 404 - Aluno Não Encontrado</h2>
+    <p>O aluno com o ID especificado não foi encontrado no sistema.</p>
+    <p>Verifique o ID e tente novamente, ou crie um novo aluno no <a href="{% url 'admin:index' %}">Django Admin</a>.</p>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Histórico de {{ aluno.nome }}{% endblock %}
+
+{% block content %}
+    <h2>Histórico do Aluno: {{ aluno.nome }}</h2>
+    <p><strong>E-mail:</strong> {{ aluno.email }}</p>
+    <p><strong>CPF:</strong> {{ aluno.cpf }}</p>
+    <p><strong>Data de Ingresso:</strong> {{ aluno.data_ingresso|date:"d/m/Y" }}</p>
+
+    <h3>Financeiro</h3>
+    <p><strong>Total Pago:</strong> R$ {{ total_pago|floatformat:2 }}</p>
+    <p><strong>Total Devido (Pendentes):</strong> R$ <span class="danger">{{ total_devido|floatformat:2 }}</span></p>
+
+    <h3>Cursos Matriculados</h3>
+    {% if matriculas %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Curso</th>
+                    <th>Valor</th>
+                    <th>Data Matrícula</th>
+                    <th>Status Pagamento</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for matricula in matriculas %}
+                <tr>
+                    <td>{{ matricula.curso.nome }}</td>
+                    <td>R$ {{ matricula.curso.valor_inscricao|floatformat:2 }}</td>
+                    <td>{{ matricula.data_matricula|date:"d/m/Y" }}</td>
+                    <td>
+                        {% if matricula.status_pagamento == 'pago' %}
+                            <span class="success">Pago</span>
+                        {% else %}
+                            <span class="danger">Pendente</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>O aluno não está matriculado em nenhum curso.</p>
+    {% endif %}
+{% endblock %}

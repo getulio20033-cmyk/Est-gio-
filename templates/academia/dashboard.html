@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h2>Dashboard Geral</h2>
+    <div class="card">
+        <h3>Resumo do Sistema</h3>
+        <p><strong>Total de Alunos:</strong> {{ total_alunos }}</p>
+        <p><strong>Cursos Ativos:</strong> {{ cursos_ativos }}</p>
+        <p><strong>Matrículas Pagas:</strong> <span class="success">{{ matriculas_pagas }}</span></p>
+        <p><strong>Matrículas Pendentes:</strong> <span class="danger">{{ matriculas_pendentes }}</span></p>
+    </div>
+
+    <div class="card">
+        <h3>Instruções</h3>
+        <p>Use o <a href="{% url 'admin:index' %}">Django Admin</a> para cadastrar e gerenciar Alunos, Cursos e Matrículas.</p>
+        <p>Para ver o histórico de um aluno específico, clique no link "Histórico Aluno (ID 1)" no menu acima.</p>
+        <p>A API REST está disponível em <code>/api/</code> para integração com outras aplicações.</p>
+    </div>
+{% endblock %}
